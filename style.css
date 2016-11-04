@@ -31,19 +31,18 @@ div
 	border-width: 0.5px;
 }
 
-.selector
+#selector
 {
 	height: 350px;
 	width: 130px;
-	margin: auto;
+	display: inline-block;
 	float:left;
+	padding-left:10px;
 }
 
 #map-svg
 {
 	width: 1000px;
 	height: 350px;
-	padding-left:150px;
-	padding-top:-100px;
-	position: relative;
+	position: absolute;
 }
