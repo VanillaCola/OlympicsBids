@@ -8,6 +8,7 @@
 #header > img
 {
 	float: left;
+	height: 80px;
 }
 
 .countries {
@@ -15,8 +16,34 @@
 	stroke: #a9a9a9;
 }
 
-.svg
+div
 {
+	font-family:"Benton Sans","Benton Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-style: italic;
+}
+
+#box
+{
+	width: 1100px;
+	height:350px;
 	border-color: #a9a9a9;
 	border-style: solid;
+	border-width: 0.5px;
+}
+
+.selector
+{
+	height: 350px;
+	width: 130px;
+	margin: auto;
+	float:left;
+}
+
+#map-svg
+{
+	width: 1000px;
+	height: 350px;
+	padding-left:150px;
+	padding-top:-100px;
+	position: relative;
 }
