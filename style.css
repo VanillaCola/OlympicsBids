@@ -1,0 +1,22 @@
+
+
+#header
+{
+	text-align:center;
+}
+
+#header > img
+{
+	float: left;
+}
+
+.countries {
+	fill: #ffffff;
+	stroke: #a9a9a9;
+}
+
+.svg
+{
+	border-color: #a9a9a9;
+	border-style: solid;
+}
