@@ -1,0 +1,170 @@
+﻿City,Continents,Country,Host?,Year
+Moscow,Europe,Russia,No,1976
+Los Angeles,Americas,United States,No,1976
+Rio de Janeiro,Americas,Brazil,No,2012
+Havana,Americas,Cuba,No,2012
+Paris,Europe,France,No,2012
+Leipzig,Europe,Germany,No,2012
+Moscow,Europe,Russia,No,2012
+Madrid,Europe,Spain,No,2012
+Istanbul,Europe,Turkey,No,2012
+New York City,Americas,United States,No,2012
+Buenos Aires,Americas,Argentina,No,2004
+Rio de Janeiro,Americas,Brazil,No,2004
+Lille,Europe,France,No,2004
+Rome,Europe,Italy,No,2004
+San Juan,Americas,Puerto Rico,No,2004
+Saint Petersburg,Europe,Russia,No,2004
+Cape Town,Africa,South Africa,No,2004
+Seville,Europe,Spain,No,2004
+Stockholm,Europe,Sweden,No,2004
+Istanbul,Europe,Turkey,No,2004
+Baku,Europe,Azerbaijan,No,2020
+Rome,Europe,Italy,No,2020
+Doha,Asia,Qatar,No,2020
+Madrid,Europe,Spain,No,2020
+Istanbul,Europe,Turkey,No,2020
+Baku,Europe,Azerbaijan,No,2016
+Prague,Europe,Czech Republic,No,2016
+Tokyo,Asia,Japan,No,2016
+Doha,Asia,Qatar,No,2016
+Madrid,Europe,Spain,No,2016
+Chicago,Americas,United States,No,2016
+Los Angeles,Americas,United States,No,1980
+Brisbane,Oceania,Australia,No,1992
+Paris,Europe,France,No,1992
+Birmingham,Europe,Great Britain,No,1992
+Amsterdam,Europe,Netherlands,No,1992
+Belgrade,Europe,Yugoslavia,No,1992
+Buenos Aires,Americas,Argentina,No,1968
+Lyon,Europe,France,No,1968
+Detroit,Americas,United States,No,1968
+Montreal,Americas,Canada,No,1972
+Madrid,Europe,Spain,No,1972
+Detroit,Americas,United States,No,1972
+Buenos Aires,Americas,Argentina,No,1956
+Montreal,Americas,Canada,No,1956
+Mexico City,Americas,Mexico,No,1956
+Chicago,Americas,United States,No,1956
+Detroit,Americas,United States,No,1956
+Los Angeles,Americas,United States,No,1956
+Minneapolis,Americas,United States,No,1956
+Philadelphia,Americas,United States,No,1956
+San Francisco,Americas,United States,No,1956
+Vienna,Europe,Austria,No,1964
+Brussels,Europe,Belgium,No,1964
+Detroit,Americas,United States,No,1964
+Brussels,Europe,Belgium,No,1960
+Budapest,Europe,Hungary,No,1960
+Tokyo,Asia,Japan,No,1960
+Mexico City,Americas,Mexico,No,1960
+Lausanne,Europe,Switzerland,No,1960
+Detroit,Americas,United States,No,1960
+Athens,Europe,Greece,No,1952
+Amsterdam,Europe,Netherlands,No,1952
+Stockholm,Europe,Sweden,No,1952
+Lausanne,Europe,Switzerland,No,1952
+Chicago,Americas,United States,No,1952
+Detroit,Americas,United States,No,1952
+Los Angeles,Americas,United States,No,1952
+Minneapolis,Americas,United States,No,1952
+Philadelphia,Americas,United States,No,1952
+Toronto,Americas,Canada,No,2008
+Havana,Americas,Cuba,No,2008
+Cairo,Africa,Egypt,No,2008
+Paris,Europe,France,No,2008
+Osaka,Asia,Japan,No,2008
+Kuala Lumpur,Asia,Malaysia,No,2008
+Seville,Europe,Spain,No,2008
+Bangkok,Asia,Thailand,No,2008
+Istanbul,Europe,Turkey,No,2008
+Helsinki,Europe,Finland,No,1940
+Melbourne,Oceania,Australia,No,1996
+Toronto,Americas,Canada,No,1996
+Manchester,Europe,Great Britain,No,1996
+Athens,Europe,Greece,No,1996
+Belgrade,Europe,Yugoslavia,No,1996
+Beijing,Asia,China,No,2000
+Berlin,Europe,Germany,No,2000
+Manchester,Europe,Great Britain,No,2000
+Istanbul,Europe,Turkey,No,2000
+Nagoya,Asia,Japan,No,1988
+Los Angeles,Americas,United States,No,1928
+Havana,Americas,Cuba,No,1920
+Lyon,Europe,France,No,1920
+Lyon,Europe,France,No,1920
+Budapest,Europe,Hungary,No,1920
+Amsterdam,Europe,Netherlands,No,1920
+Atlanta,Americas,United States,No,1920
+Cleveland,Americas,United States,No,1920
+Philadelphia,Americas,United States,No,1920
+Buenos Aires,Americas,Argentina,No,1936
+Rio de Janeiro,Americas,Brazil,No,1936
+Alexandria,Africa,Egypt,No,1936
+Helsinki,Europe,Finland,No,1936
+Cologne,Europe,Germany,No,1936
+Frankfurt,Europe,Germany,No,1936
+Nuremberg,Europe,Germany,No,1936
+Budapest,Europe,Hungary,No,1936
+Dublin,Europe,Ireland,No,1936
+Rome,Europe,Italy,No,1936
+Barcelona,Europe,Spain,No,1936
+Lausanne,Europe,Switzerland,No,1936
+Brussels,Europe,Belgium,No,1916
+Alexandria,Africa,Egypt,No,1916
+Budapest,Europe,Hungary,No,1916
+Amsterdam,Europe,Netherlands,No,1916
+Cleveland,Americas,United States,No,1916
+Berlin,Europe,Germany,No,1908
+Milan,Europe,Italy,No,1908
+Rome,Europe,Italy,No,1908
+Lausanne,Europe,Switzerland,No,1948
+Baltimore,Americas,United States,No,1948
+Los Angeles,Americas,United States,No,1948
+Minneapolis,Americas,United States,No,1948
+Philadelphia,Americas,United States,No,1948
+Montreal,Americas,Canada,No,1944
+Helsinki,Europe,Finland,No,1944
+Athens,Europe,Greece,No,1944
+Budapest,Europe,Hungary,No,1944
+Rome,Europe,Italy,No,1944
+Lausanne,Europe,Switzerland,No,1944
+Detroit,Americas,United States,No,1944
+Prague,Europe,Czech Republic,No,1924
+Rome,Europe,Italy,No,1924
+Amsterdam,Europe,Netherlands,No,1924
+Barcelona,Europe,Spain,No,1924
+Los Angeles,Americas,United States,No,1924
+Chicago,Americas,United States,No,1904
+Tokyo,Asia,Japan,No,1940
+Berlin,Europe,Germany,No,1916
+London,Europe,Great Britain,No,1944
+Montreal,Americas,Canada,Yes,1976
+London,Europe,Great Britain,Yes,2012
+Athens,Europe,Greece,Yes,2004
+Tokyo,Asia,Japan,Yes,2020
+Rio de Janeiro,Americas,Brazil,Yes,2016
+Los Angeles,Americas,United States,Yes,1932
+Moscow,Europe,Russia,Yes,1980
+Barcelona,Europe,Spain,Yes,1992
+Mexico City,Americas,Mexico,Yes,1968
+Munich,Europe,West Germany,Yes,1972
+Melbourne,Oceania,Australia,Yes,1956
+Los Angeles,Americas,United States,Yes,1984
+Tokyo,Asia,Japan,Yes,1964
+Rome,Europe,Italy,Yes,1960
+Helsinki,Europe,Finland,Yes,1952
+Beijing,Asia,China,Yes,2008
+Atlanta,Americas,United States,Yes,1996
+Sydney,Oceania,Australia,Yes,2000
+Seoul,Asia,South Korea,Yes,1988
+Amsterdam,Europe,Netherlands,Yes,1928
+Antwerp,Europe,Belgium,Yes,1920
+Athens,Europe,Greece,Yes,1896
+Berlin,Europe,Germany,Yes,1936
+London,Europe,Great Britain,Yes,1908
+London,Europe,Great Britain,Yes,1948
+Paris,Europe,France,Yes,1900
+Paris,Europe,France,Yes,1924
+Stockholm,Europe,Sweden,Yes,1912
+St. Louis,Americas,United States,Yes,1904

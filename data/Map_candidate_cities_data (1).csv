@@ -1,0 +1,170 @@
+﻿time / times,City,Continents,Country,Host?,Host
+time,Moscow,Europe,Russia,No,Montreal
+time,Los Angeles,Americas,United States,No,Montreal
+time,Rio de Janeiro,Americas,Brazil,No,London
+time,Havana,Americas,Cuba,No,London
+time,Paris,Europe,France,No,London
+time,Leipzig,Europe,Germany,No,London
+time,Moscow,Europe,Russia,No,London
+time,Madrid,Europe,Spain,No,London
+time,Istanbul,Europe,Turkey,No,London
+time,New York City,Americas,United States,No,London
+time,Buenos Aires,Americas,Argentina,No,Athens
+time,Rio de Janeiro,Americas,Brazil,No,Athens
+time,Lille,Europe,France,No,Athens
+time,Rome,Europe,Italy,No,Athens
+time,San Juan,Americas,Puerto Rico,No,Athens
+time,Saint Petersburg,Europe,Russia,No,Athens
+time,Cape Town,Africa,South Africa,No,Athens
+time,Seville,Europe,Spain,No,Athens
+time,Stockholm,Europe,Sweden,No,Athens
+time,Istanbul,Europe,Turkey,No,Athens
+time,Baku,Europe,Azerbaijan,No,Tokyo
+time,Rome,Europe,Italy,No,Tokyo
+time,Doha,Asia,Qatar,No,Tokyo
+time,Madrid,Europe,Spain,No,Tokyo
+time,Istanbul,Europe,Turkey,No,Tokyo
+time,Baku,Europe,Azerbaijan,No,Rio de Janeiro
+time,Prague,Europe,Czech Republic,No,Rio de Janeiro
+time,Tokyo,Asia,Japan,No,Rio de Janeiro
+time,Doha,Asia,Qatar,No,Rio de Janeiro
+time,Madrid,Europe,Spain,No,Rio de Janeiro
+time,Chicago,Americas,United States,No,Rio de Janeiro
+time,Los Angeles,Americas,United States,No,Moscow
+time,Brisbane,Oceania,Australia,No,Barcelona
+time,Paris,Europe,France,No,Barcelona
+time,Birmingham,Europe,Great Britain,No,Barcelona
+time,Amsterdam,Europe,Netherlands,No,Barcelona
+time,Belgrade,Europe,Yugoslavia,No,Barcelona
+time,Buenos Aires,Americas,Argentina,No,Mexico City
+time,Lyon,Europe,France,No,Mexico City
+time,Detroit,Americas,United States,No,Mexico City
+time,Montreal,Americas,Canada,No,Munich
+time,Madrid,Europe,Spain,No,Munich
+time,Detroit,Americas,United States,No,Munich
+time,Buenos Aires,Americas,Argentina,No,Melbourne
+time,Montreal,Americas,Canada,No,Melbourne
+time,Mexico City,Americas,Mexico,No,Melbourne
+time,Chicago,Americas,United States,No,Melbourne
+time,Detroit,Americas,United States,No,Melbourne
+time,Los Angeles,Americas,United States,No,Melbourne
+time,Minneapolis,Americas,United States,No,Melbourne
+time,Philadelphia,Americas,United States,No,Melbourne
+time,San Francisco,Americas,United States,No,Melbourne
+time,Vienna,Europe,Austria,No,Tokyo
+time,Brussels,Europe,Belgium,No,Tokyo
+time,Detroit,Americas,United States,No,Tokyo
+time,Brussels,Europe,Belgium,No,Rome
+time,Budapest,Europe,Hungary,No,Rome
+time,Tokyo,Asia,Japan,No,Rome
+time,Mexico City,Americas,Mexico,No,Rome
+time,Lausanne,Europe,Switzerland,No,Rome
+time,Detroit,Americas,United States,No,Rome
+time,Athens,Europe,Greece,No,Helsinki
+time,Amsterdam,Europe,Netherlands,No,Helsinki
+time,Stockholm,Europe,Sweden,No,Helsinki
+time,Lausanne,Europe,Switzerland,No,Helsinki
+time,Chicago,Americas,United States,No,Helsinki
+time,Detroit,Americas,United States,No,Helsinki
+time,Los Angeles,Americas,United States,No,Helsinki
+time,Minneapolis,Americas,United States,No,Helsinki
+time,Philadelphia,Americas,United States,No,Helsinki
+time,Toronto,Americas,Canada,No,Beijing
+time,Havana,Americas,Cuba,No,Beijing
+time,Cairo,Africa,Egypt,No,Beijing
+time,Paris,Europe,France,No,Beijing
+time,Osaka,Asia,Japan,No,Beijing
+time,Kuala Lumpur,Asia,Malaysia,No,Beijing
+time,Seville,Europe,Spain,No,Beijing
+time,Bangkok,Asia,Thailand,No,Beijing
+time,Istanbul,Europe,Turkey,No,Beijing
+time,Helsinki,Europe,Finland,No,Tokyo (cancelled)
+time,Melbourne,Oceania,Australia,No,Atlanta
+time,Toronto,Americas,Canada,No,Atlanta
+time,Manchester,Europe,Great Britain,No,Atlanta
+time,Athens,Europe,Greece,No,Atlanta
+time,Belgrade,Europe,Yugoslavia,No,Atlanta
+time,Beijing,Asia,China,No,Sydney
+time,Berlin,Europe,Germany,No,Sydney
+time,Manchester,Europe,Great Britain,No,Sydney
+time,Istanbul,Europe,Turkey,No,Sydney
+time,Nagoya,Asia,Japan,No,Seoul
+time,Los Angeles,Americas,United States,No,Amsterdam
+time,Havana,Americas,Cuba,No,Antwerp
+time,Lyon,Europe,France,No,Antwerp
+time,Lyon,Europe,France,No,Antwerp
+time,Budapest,Europe,Hungary,No,Antwerp
+time,Amsterdam,Europe,Netherlands,No,Antwerp
+time,Atlanta,Americas,United States,No,Antwerp
+time,Cleveland,Americas,United States,No,Antwerp
+time,Philadelphia,Americas,United States,No,Antwerp
+time,Buenos Aires,Americas,Argentina,No,Berlin
+time,Rio de Janeiro,Americas,Brazil,No,Berlin
+time,Alexandria,Africa,Egypt,No,Berlin
+time,Helsinki,Europe,Finland,No,Berlin
+time,Cologne,Europe,Germany,No,Berlin
+time,Frankfurt,Europe,Germany,No,Berlin
+time,Nuremberg,Europe,Germany,No,Berlin
+time,Budapest,Europe,Hungary,No,Berlin
+time,Dublin,Europe,Ireland,No,Berlin
+time,Rome,Europe,Italy,No,Berlin
+time,Barcelona,Europe,Spain,No,Berlin
+time,Lausanne,Europe,Switzerland,No,Berlin
+time,Brussels,Europe,Belgium,No,Berlin (cancelled)
+time,Alexandria,Africa,Egypt,No,Berlin (cancelled)
+time,Budapest,Europe,Hungary,No,Berlin (cancelled)
+time,Amsterdam,Europe,Netherlands,No,Berlin (cancelled)
+time,Cleveland,Americas,United States,No,Berlin (cancelled)
+time,Berlin,Europe,Germany,No,London
+time,Milan,Europe,Italy,No,London
+time,Rome,Europe,Italy,No,London
+time,Lausanne,Europe,Switzerland,No,London
+time,Baltimore,Americas,United States,No,London
+time,Los Angeles,Americas,United States,No,London
+time,Minneapolis,Americas,United States,No,London
+time,Philadelphia,Americas,United States,No,London
+time,Montreal,Americas,Canada,No,London (cancelled)
+time,Helsinki,Europe,Finland,No,London (cancelled)
+time,Athens,Europe,Greece,No,London (cancelled)
+time,Budapest,Europe,Hungary,No,London (cancelled)
+time,Rome,Europe,Italy,No,London (cancelled)
+time,Lausanne,Europe,Switzerland,No,London (cancelled)
+time,Detroit,Americas,United States,No,London (cancelled)
+time,Prague,Europe,Czech Republic,No,Paris
+time,Rome,Europe,Italy,No,Paris
+time,Amsterdam,Europe,Netherlands,No,Paris
+time,Barcelona,Europe,Spain,No,Paris
+time,Los Angeles,Americas,United States,No,Paris
+time,Chicago,Americas,United States,No,St. Louis
+time,Tokyo,Asia,Japan,No,Tokyo (cancelled)
+time,Berlin,Europe,Germany,No,Berlin (cancelled)
+time,London,Europe,Great Britain,No,London (cancelled)
+time,Montreal,Americas,Canada,Yes,Montreal
+time,London,Europe,Great Britain,Yes,London
+time,Athens,Europe,Greece,Yes,Athens
+time,Tokyo,Asia,Japan,Yes,Tokyo
+time,Rio de Janeiro,Americas,Brazil,Yes,Rio de Janeiro
+time,Los Angeles,Americas,United States,Yes,Los Angeles
+time,Moscow,Europe,Russia,Yes,Moscow
+time,Barcelona,Europe,Spain,Yes,Barcelona
+time,Mexico City,Americas,Mexico,Yes,Mexico City
+time,Munich,Europe,West Germany,Yes,Munich
+time,Melbourne,Oceania,Australia,Yes,Melbourne
+time,Los Angeles,Americas,United States,Yes,Los Angeles
+time,Tokyo,Asia,Japan,Yes,Tokyo
+time,Rome,Europe,Italy,Yes,Rome
+time,Helsinki,Europe,Finland,Yes,Helsinki
+time,Beijing,Asia,China,Yes,Beijing
+time,Atlanta,Americas,United States,Yes,Atlanta
+time,Sydney,Oceania,Australia,Yes,Sydney
+time,Seoul,Asia,South Korea,Yes,Seoul
+time,Amsterdam,Europe,Netherlands,Yes,Amsterdam
+time,Antwerp,Europe,Belgium,Yes,Antwerp
+time,Athens,Europe,Greece,Yes,Athens
+time,Berlin,Europe,Germany,Yes,Berlin
+time,London,Europe,Great Britain,Yes,London
+time,London,Europe,Great Britain,Yes,London
+time,Paris,Europe,France,Yes,Paris
+time,Paris,Europe,France,Yes,Paris
+time,Stockholm,Europe,Sweden,Yes,Stockholm
+time,St. Louis,Americas,United States,Yes,St. Louis
