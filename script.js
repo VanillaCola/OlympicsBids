@@ -3,7 +3,7 @@
 
 function drawMap(world)
 {
-	projection = d3.geoEquirectangular().scale(150).translate([450, 200]);
+	projection = d3.geoEquirectangular().scale(160).translate([450, 200]);
 	
 	var map = d3.select("#map");
 	
