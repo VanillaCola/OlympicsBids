@@ -18,9 +18,22 @@
 
 <div id = "map-view" class="view">
 <h2>World Map</h2>
-    <svg width="900" height="400" class="svg">
-        <g id="map"></g>
-    </svg>
+	<div id="box">
+		<div id="selector">
+		<h5>Choose a Continent</h5>
+		<select>
+			<option>(All)</option>
+			<option>Africa</option>
+			<option>Americas</option>
+			<option>Asia</option>
+			<option>Europe</option>
+			<option>Oceania</option>
+		</select>
+		</div>
+		<svg id="map-svg">
+			<g id="map"></g>
+		</svg>
+	</div>
 
 </div>
 

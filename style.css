@@ -8,6 +8,7 @@
 #header > img
 {
 	float: left;
+	height: 80px;
 }
 
 .countries {
@@ -15,8 +16,74 @@
 	stroke: #a9a9a9;
 }
 
-.svg
+div
 {
+	font-family:"Benton Sans","Benton Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-style: italic;
+}
+
+#box
+{
+	width: 1100px;
+	height:350px;
 	border-color: #a9a9a9;
 	border-style: solid;
+	border-width: 0.5px;
 }
+
+#selector
+{
+	height: 350px;
+	width: 130px;
+	display: inline-block;
+	float:left;
+	padding-left:10px;
+}
+
+#map-svg
+{
+	width: 950px;
+	height: 350px;
+	position: absolute;
+}
+
+.Asia
+{
+	fill:#000000;
+	stroke-width:1;
+	stroke:#ffffff;
+	fill-opacity:0.7;
+}
+
+.Africa
+{
+	fill: #FFD700;
+	stroke-width:1;
+	stroke:#ffffff;
+	fill-opacity:0.7;
+}
+
+.Americas
+{
+	fill:#FF0000;
+	stroke-width:1;
+	stroke:#ffffff;
+	fill-opacity:0.7;
+}
+
+.Oceania
+{
+	fill:#4169E1;
+	stroke-width:1;
+	stroke:#ffffff;
+	fill-opacity:0.7;
+}
+
+.Europe
+{
+	fill:#008000;
+	stroke-width:1;
+	stroke:#ffffff;
+	fill-opacity:0.7;
+}
+
