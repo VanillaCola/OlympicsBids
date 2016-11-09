@@ -1,8 +1,7 @@
-
 var mapData;
 var candidateData;
 var yearData;
-var mapping;
+// var mapping;
 
 function drawMap(world)
 {
@@ -79,6 +78,15 @@ function drawChart() {
     var height = 400;
     var width = 1200;
     var padding = 40;
+
+    var tip = d3.tip()
+        .attr("class", "d3-tip")
+        .offset([25,75])
+        .html(function(d) {
+            // console.log(d);
+            return "<span>" + d.city + "</span>";
+        });
+
     d3.select("#barChartSvg")
         .attr("height", height)
         .attr("width", width);
@@ -97,7 +105,8 @@ function drawChart() {
 
     var xAxis = d3.axisBottom();
     xAxis.scale(xAxisScale)
-        .tickValues(d3.range(1896, 2024, 4));
+        .tickValues(d3.range(1896, 2024, 4))
+        .tickFormat(d3.format("d"));
 
     d3.select("#yAxis")
         .attr("transform", "translate("+padding+",0)")
@@ -108,15 +117,15 @@ function drawChart() {
         .call(xAxis);
 
 
-
-    console.log(mapping);
+    // console.log(mapping);
     for (var index = 1896; index <= 2020; index += 4) {
         var year = yearData[index.toString()];
 
         // console.log(year);
         d3.select("#barChart")
             .append("g")
-            .attr("id", "year"+index);
+            .attr("id", "year"+index)
+            .call(tip);
 
         d3.select("#year"+index)
             .selectAll("rect")
@@ -135,16 +144,24 @@ function drawChart() {
             .attr("width", 18)
             .attr("height", yAxisScale(19))
             .attr("class", function(d) {
-                return mapping[d];});
+                return d.continent;
+            })
+            .on("mouseover", tip.show)
+            .on("mouseout", tip.hide);
 
         if (year.host) {
             d3.select("#year" + index)
+                // .selectAll("rect")
+                .data([year.host])
+                // .enter()
                 .append("rect")
                 .attr("x", xAxisScale(index + 3))
                 .attr("y", height - padding - yAxisScale(19))
                 .attr("width", 30)
                 .attr("height", yAxisScale(19))
-                .classed(mapping[year.host], true);
+                .classed(year.host.continent, true)
+                .on("mouseover", tip.show)
+                .on("mouseout", tip.hide);
         }
     }
 
@@ -154,27 +171,38 @@ function drawChartCall() {
     d3.csv("data/Candidate_Cities_data.csv", function (error, csv) {
         if (error) throw error;
 
+        var mapping = {};
+        mapData.forEach(function (d) {
+            mapping[d.City] = d.Continents;
+        });
+
         var list = {};
         csv.forEach(function (d) {
             if (!(d.Year in list)) {
                 list[d.Year] = {};
                 list[d.Year].candidate = [];
-                list[d.Year].candidate.push(d.City);
+                list[d.Year].candidate.push({city:d.City, continent:mapping[d.City]});
             }
             else {
-                list[d.Year].candidate.push(d.City);
+                list[d.Year].candidate.push({city:d.City, continent:mapping[d.City]});
             }
 
             if (d["Host?"] == "Yes") {
-                list[d.Year].host = d.City;
+                list[d.Year].host = {city:d.City, continent:mapping[d.City]};
                 list[d.Year].candidate.pop();
             }
         });
 
-        mapping = {};
-        mapData.forEach(function (d) {
-            mapping[d.City] = d.Continents;
-        });
+        for (var key in list) {
+            list[key].candidate.sort(function(a,b) {
+                if(a.continent > b.continent)
+                    return -1;
+                if (a.continent == b.continent)
+                    return 0;
+                else
+                    return 1;
+            });
+        }
 
         candidateData = csv;
         yearData = list;
