@@ -19,7 +19,6 @@
 div
 {
 	font-family:"Benton Sans","Benton Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-style: italic;
 }
 
 #box
@@ -31,7 +30,7 @@ div
 	border-width: 0.5px;
 }
 
-#selector
+#selection
 {
 	height: 350px;
 	width: 130px;
@@ -87,11 +86,33 @@ div
 	fill-opacity:0.7;
 }
 
-.d3-tip {
+#summary
+{
+	display: hidden;
+}
+
+.map-tooltip {
     /*line-height: 5;*/
     padding-left: 10px;
     padding-right: 10px;
-    min-width: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    min-width: 400px;
+    border-style: groove;
+    /*padding: 12px;*/
+    background: #FFFFFF;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.chart-tooltip {
+    /*line-height: 5;*/
+    padding-left: 10px;
+    padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    min-width: 50px;
     border-style: groove;
     /*padding: 12px;*/
     background: #FFFFFF;
