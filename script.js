@@ -210,7 +210,7 @@ function drawChart() {
     var yearAxis = []
 
     var tip = d3.tip()
-        .attr("class", "d3-tip")
+        .attr("class", "chart-tooltip")
         .offset([25,75])
         .html(function(d) {
             var country = "";
@@ -361,7 +361,7 @@ function drawChart() {
             var unit = width / sum;
 
             var tip = d3.tip()
-                .attr("class", "d3-tip")
+                .attr("class", "chart-tooltip")
                 .offset([0, 0])
                 .html(function (d) {
                     var returnValue = "";
@@ -395,6 +395,16 @@ function drawChart() {
 
             dataBindingCombined
                 .attr("y", 40)
+                .attr("class", function (d, i) {
+                    return arr[i][0];
+                })
+                .attr("height", 40)
+                // .attr("width", 0)
+                .style("fill-opacity", 0.1)
+                .on("mouseover", tip.show)
+                .on("mouseout", tip.hide)
+                .transition()
+                .duration(500)
                 .attr("x", function (d, i) {
                     var temp = 0;
                     for (var index = 0; index < i; index++) {
@@ -402,20 +412,10 @@ function drawChart() {
                     }
                     return temp * unit + padding;
                 })
-                .attr("class", function (d, i) {
-                    return arr[i][0];
-                })
-                .attr("height", 40)
-                .attr("width", 0)
-                .style("fill-opacity", 0)
-                .on("mouseover", tip.show)
-                .on("mouseout", tip.hide)
-                .transition()
-                .duration(500)
                 .attr("width", function (d, i) {
                     return unit * arr[i][1];
                 })
-                .style("fill-opacity", 1);
+                .style("fill-opacity", 0.8);
         }
         else {
             d3.select("#brushText").selectAll("text").remove();

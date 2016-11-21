@@ -122,7 +122,7 @@ div
 	padding-top: 10px;
 	padding-bottom: 10px;
     min-width: 50px;
-    border-style: groove;
+    border-style: inset;
     /*padding: 12px;*/
 	background: #ffffff;
     color: rgba(0, 0, 0, 0.8);
@@ -131,11 +131,11 @@ div
 }
 
 .brush .selection {
-	fill-opacity: .4;
-	stroke: red;
+    fill-opacity: 0.25;
+    stroke: orange;
 	stroke-dasharray: 25;
 	animation: dash 4s infinite;
-	stroke-width: 1px;
+    stroke-width: 3px;
 }
 
 @keyframes dash {
