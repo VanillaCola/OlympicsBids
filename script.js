@@ -158,6 +158,16 @@ function updateMap(selection)
 	
 	var map = d3.select("#map");
 	
+	var tip = d3.tip()
+        .attr("class", "map-tooltip")
+		.direction('se')
+        .offset([0,0])
+        .html(function(d) {
+            return "<b>" + d.City + "</b> has applies <b>" + d.count_of_host + "</b> times to host the Summer Games.<br/><br/> Click to see how many times " + d.City + " successfully hosted the Games.";
+        });
+
+	map.call(tip);
+
 	// var projection = d3.geoEquirectangular().scale(160).translate([450, 200]);
     var projection = d3.geoMercator().scale(120).translate([450, 220]);
 	
@@ -186,7 +196,9 @@ function updateMap(selection)
 		.attr("height", function(d)
 		{
 			return 10 + d.count_of_host;
-		});
+		})
+		.on("mouseover", tip.show)
+        .on("mouseout", tip.hide);
 		
 }
 
@@ -426,14 +438,14 @@ function drawChartCall() {
             if (!(d.Year in list)) {
                 list[d.Year] = {};
                 list[d.Year].candidate = [];
-                list[d.Year].candidate.push({city:d.City, continent:mapping[d.City]});
+                list[d.Year].candidate.push({city:d.City, country: d.Country, continent:mapping[d.City]});
             }
             else {
-                list[d.Year].candidate.push({city:d.City, continent:mapping[d.City]});
+                list[d.Year].candidate.push({city:d.City, country: d.Country, continent:mapping[d.City]});
             }
 
             if (d["Host?"] == "Yes") {
-                list[d.Year].host = {city:d.City, continent:mapping[d.City]};
+                list[d.Year].host = {city:d.City, country: d.Country, continent:mapping[d.City]};
                 list[d.Year].candidate.pop();
             }
         });
@@ -480,4 +492,22 @@ d3.json("data/world-50m.json", function(error, world)
         drawChartCall();
     });
 });
+
+
+
+
+
+// d3.csv("data/Map_candidate_cities_data.csv", function(error, csv)
+// {
+//     if (error) throw error;
+//
+// 	csv.forEach(function(d)
+// 	{
+// 		d.pos = [+d.Longitude, +d.Latitude];
+// 		d.count_of_host = +d["Count of Host"];
+// 	});
+//
+// 	mapData = csv;
+// 	updateMap("all");
+// });
 

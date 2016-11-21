@@ -92,13 +92,37 @@ div
 	fill-opacity:0.7;
 }
 
-.d3-tip {
+#summary
+{
+	display: hidden;
+}
+
+.map-tooltip {
     /*line-height: 5;*/
     padding-left: 10px;
     padding-right: 10px;
     min-width: 100px;
 	min-height: 50px;
 	border-style: inset;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    min-width: 400px;
+    border-style: groove;
+    /*padding: 12px;*/
+    background: #FFFFFF;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.chart-tooltip {
+    /*line-height: 5;*/
+    padding-left: 10px;
+    padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    min-width: 50px;
+    border-style: groove;
     /*padding: 12px;*/
 	background: #ffffff;
     color: rgba(0, 0, 0, 0.8);
