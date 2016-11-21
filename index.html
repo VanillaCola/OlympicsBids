@@ -21,15 +21,15 @@
 <div id = "map-view" class="view">
 <h2>World Map</h2>
 	<div id="box">
-		<div id="selector">
+		<div id="selectionBox">
 		<h5>Choose a Continent</h5>
-		<select>
-			<option>(All)</option>
-			<option>Africa</option>
-			<option>Americas</option>
-			<option>Asia</option>
-			<option>Europe</option>
-			<option>Oceania</option>
+			<select id="selector">
+				<option selected value="All">(All)</option>
+				<option value="Africa">Africa</option>
+				<option value="Americas">Americas</option>
+				<option value="Asia">Asia</option>
+				<option value="Europe">Europe</option>
+				<option value="Oceania">Oceania</option>
 		</select>
 		</div>
 		<svg id="map-svg">
@@ -45,6 +45,14 @@
 		<g id="xAxis"></g>
 		<g id="yAxis"></g>
 		<g id="barChart"></g>
+	</svg>
+</div>
+
+<div>
+	<svg id="brushDisplay">
+		<g id="brushText"></g>
+		<g id="brushIcon"></g>
+		<g id="brushFigure"></g>
 	</svg>
 </div>
 
