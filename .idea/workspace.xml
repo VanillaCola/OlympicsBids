@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="832b87ef-619d-44ca-a72a-d4b5fbf0d1de" name="Default" comment="">
+    <list default="true" id="832b87ef-619d-44ca-a72a-d4b5fbf0d1de" name="Default" comment="slightly modified code to reflect css changes.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script.js" afterPath="$PROJECT_DIR$/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <ignored path="OlympicsBids.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -252,7 +250,7 @@
       <workItem from="1479538381967" duration="2886000" />
       <workItem from="1479580287753" duration="9448000" />
       <workItem from="1479632038287" duration="1478000" />
-      <workItem from="1479682595940" duration="11224000" />
+      <workItem from="1479682595940" duration="11750000" />
     </task>
     <task id="LOCAL-00001" summary="added bar chart">
       <created>1478341312816</created>
@@ -275,11 +273,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479703636711</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="slightly modified code to reflect css changes.">
+      <created>1479709887871</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1479709887871</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64417000" />
+    <option name="totallyTimeSpent" value="64943000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1436" height="877" extended-state="6" />
@@ -322,7 +327,8 @@
     <MESSAGE value="added bar chart" />
     <MESSAGE value="added tooltip" />
     <MESSAGE value="added zoom-in and brush functions." />
-    <option name="LAST_COMMIT_MESSAGE" value="added zoom-in and brush functions." />
+    <MESSAGE value="slightly modified code to reflect css changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="slightly modified code to reflect css changes." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
