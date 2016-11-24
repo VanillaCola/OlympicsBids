@@ -1,6 +1,7 @@
 var mapData;
 var candidateData;
 var yearData;
+var summaryData;
 // var mapping;
 
 function drawMap(world)
@@ -26,7 +27,6 @@ function drawMap(world)
         .attr("class", "background")
         .attr("width", 1100)
         .attr("height", 350)
-        .on("click", clicked);
 
 	map.selectAll(".countries")
 		.data(countries)
@@ -84,6 +84,7 @@ function drawMap(world)
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
         // .style("stroke-width", 1.5 / k + "px");
     }
+	
 }
 
 function selectionChange() {
@@ -197,8 +198,74 @@ function updateMap(selection)
 		{
 			return 10 + d.count_of_host;
 		})
-		.on("mouseover", tip.show)
-        .on("mouseout", tip.hide);
+		.on("mouseover", function(d)
+		{
+			d3.select(this)
+			.style("stroke", "#000000")
+			.style("stroke", "5");
+			
+			tip.show(d);
+		})
+        .on("mouseout", function(d)
+		{
+			d3.select(this)
+			.style("stroke", "#ffffff")
+			.style("stroke", "1");
+
+			tip.hide(d);
+		})
+		.on("click", function(d){
+			var summary = d3.select("#summary");
+			var hist = [];
+			var host = 0;
+			var total = 0;
+			var continent = "";
+			var rate = 0;
+			if(d.Continents == "Asia")
+				continent = "Asia_td";
+			else if(d.Continents == "Americas")
+				continent = "Americas_td";
+			else if(d.Continents == "Africa")
+				continent = "Africa_td";
+			else if(d.Continents == "Oceania")
+				continent = "Oceania_td";
+			else if(d.Continents == "Europe")
+				continent = "Europe_td";
+			
+            summaryData.forEach(function (city) {
+                if (city.City == d.City) {
+					total = total + 1;
+					if(city["Host?"] == "Yes")
+					{
+						host = host + 1;
+					}
+					hist.push({"Year": city.Year, "Host": city["Host?"]});
+                }
+            });
+			
+			rate = host/total;
+			
+			rate = rate.toFixed(2);
+			
+			var table = '<table id="summary_table">';
+			table += '<td class="'+continent+'">' + d.City + ' Hosted ' + host + ' Games: </td>';
+			
+			hist.forEach(function(d)
+			{
+				if(d.Host == "Yes")	
+					table += '<td class="' + continent + '">' + d.Year + '<br>' + '&#x2714' + '</td>';
+				else
+					table += '<td class="' + continent + '">' + d.Year + '<br>' + '&#x2718' + '</td>';
+			});
+			
+			table += '<td class="' + continent + '">' + "Success Rate" + '<br>' + rate + '</td>';
+			
+			table += '</table>';
+			
+			summary.style("visibility", "visible")
+					.html(table);
+			console.log(table);
+		});
 		
 }
 
@@ -281,8 +348,19 @@ function drawChart() {
             .attr("class", function(d) {
                 return d.continent;
             })
-            .on("mouseover", tip.show)
-            .on("mouseout", tip.hide);
+            .on("mouseover", function(d){
+				d3.select(this)
+				.style("stroke", "#000000")
+				.style("stroke", "5");
+				tip.show(d);
+			})
+            .on("mouseout", function(d)
+			{
+				d3.select(this)
+				.style("stroke", "#ffffff")
+				.style("stroke", "1");
+				tip.hide(d);
+			});
 
         if (year.host) {
             d3.select("#year" + index)
@@ -295,8 +373,20 @@ function drawChart() {
                 .attr("width", 30)
                 .attr("height", yAxisScale(19))
                 .classed(year.host.continent, true)
-                .on("mouseover", tip.show)
-                .on("mouseout", tip.hide);
+                .on("mouseover", function(d)
+				{
+					d3.select(this)
+					.style("stroke", "#000000")
+					.style("stroke", "5");
+					tip.show(d);
+				})
+                .on("mouseout", function(d)
+				{
+					d3.select(this)
+					.style("stroke", "#ffffff")
+					.style("stroke", "1");
+					tip.hide(d)
+				});
         }
     }
 
@@ -473,6 +563,15 @@ d3.json("data/world-50m.json", function(error, world)
 	if(error) throw error;
 
 	drawMap(world);
+	
+
+    d3.csv("data/Candidate_Cities_data.csv", function(error, csv)
+    {
+        if (error) throw error;
+		
+		summaryData = csv.sort(function(a,b){return a.Year-b.Year});
+    });
+	
 
     d3.csv("data/Map_candidate_cities_data.csv", function(error, csv)
     {
@@ -491,23 +590,6 @@ d3.json("data/world-50m.json", function(error, world)
 
         drawChartCall();
     });
+	
+	
 });
-
-
-
-
-
-// d3.csv("data/Map_candidate_cities_data.csv", function(error, csv)
-// {
-//     if (error) throw error;
-//
-// 	csv.forEach(function(d)
-// 	{
-// 		d.pos = [+d.Longitude, +d.Latitude];
-// 		d.count_of_host = +d["Count of Host"];
-// 	});
-//
-// 	mapData = csv;
-// 	updateMap("all");
-// });
-

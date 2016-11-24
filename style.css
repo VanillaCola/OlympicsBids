@@ -19,7 +19,6 @@
 div
 {
 	font-family:"Benton Sans","Benton Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-style: italic;
 }
 
 #box
@@ -94,7 +93,8 @@ div
 
 #summary
 {
-	display: hidden;
+	visibility: hidden;
+	height: 100px;
 }
 
 .map-tooltip {
@@ -158,4 +158,43 @@ div
 
 .active {
 	fill: orange;
+}
+
+#summary
+{
+	padding-top:20px;
+	padding-left:20px;
+	text-align:center;
+	font-weight:bold;
+}
+
+.Asia_td
+{
+	color: #000000;	
+}
+
+.Africa_td
+{
+	color: #FFD700;	
+}
+
+.Americas_td
+{
+	color: #FF0000;
+}
+
+.Oceania_td
+{
+	color: #4169E1;
+}
+
+.Europe_td
+{
+	color: #008000;
+}
+
+
+td
+{
+	width: 100px;
 }
