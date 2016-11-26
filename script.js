@@ -176,6 +176,10 @@ function updateMap(selection)
 		.data(mapData)
 		.enter()
 		.append("rect")
+		.attr("id", function(d)
+		{
+			return "m"+d.City;
+		})
 		.attr("class", function(d)
 		{
 			return d.Continents;
@@ -192,17 +196,17 @@ function updateMap(selection)
 		})
 		.attr("width", function(d)
 		{
-			return 10 + d.count_of_host;
+			return  1.2* d.count_of_host+10;
 		})
 		.attr("height", function(d)
 		{
-			return 10 + d.count_of_host;
+			return 1.2* d.count_of_host+10;
 		})
 		.on("mouseover", function(d)
 		{
 			d3.select(this)
 			.style("stroke", "#000000")
-			.style("stroke", "5");
+			.style("stroke-width", "2");
 			
 			tip.show(d);
 		})
@@ -210,7 +214,7 @@ function updateMap(selection)
 		{
 			d3.select(this)
 			.style("stroke", "#ffffff")
-			.style("stroke", "1");
+			.style("stroke-width", "1");
 
 			tip.hide(d);
 		})
@@ -258,7 +262,7 @@ function updateMap(selection)
 					table += '<td class="' + continent + '">' + d.Year + '<br>' + '&#x2718' + '</td>';
 			});
 			
-			table += '<td class="' + continent + '">' + "Success Rate" + '<br>' + rate + '</td>';
+			table += '<td class="' + continent + '">' + "Success Rate" + '<br>' + rate*100 + '%</td>';
 			
 			table += '</table>';
 			
@@ -291,7 +295,8 @@ function drawChart() {
 
     d3.select("#barChartSvg")
         .attr("height", height)
-        .attr("width", width);
+        .attr("width", width)
+		.style("margin", "auto");
 
     var xAxisScale = d3.scaleLinear()
         .domain([1892, 2024])
@@ -351,14 +356,23 @@ function drawChart() {
             .on("mouseover", function(d){
 				d3.select(this)
 				.style("stroke", "#000000")
-				.style("stroke", "5");
+				.style("stroke-width", "2");
+			
+				d3.select("#m"+d.city)
+				.style("stroke", "#000000")
+				.style("stroke-width", "2");
 				tip.show(d);
 			})
             .on("mouseout", function(d)
 			{
 				d3.select(this)
 				.style("stroke", "#ffffff")
-				.style("stroke", "1");
+				.style("stroke-width", "1");
+				
+				d3.select("#m"+d.city)
+				.style("stroke", "#ffffff")
+				.style("stroke-width", "1");
+				
 				tip.hide(d);
 			});
 

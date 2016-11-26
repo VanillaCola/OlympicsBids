@@ -1,8 +1,51 @@
 
 
+h2
+{
+	font-family: 'Ultra', sans-serif;
+	text-transform: uppercase;
+	text-shadow: 0 2px white, 0 3px #777;
+}
+
+#box, #barChart_box, #brusher_box, #summary
+{
+	margin:auto;
+}
+
 #header
 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align:center;
+}
+
+#header > h1
+{
+	text-transform: uppercase;
+}
+
+.yellow
+{
+	color: #FFEF08;
+}
+
+.black
+{
+	color:#000000;
+}
+
+.red
+{
+	color:#DE1818;
+}
+
+.blue
+{
+	color:#00298C;
+}
+
+.green
+{
+	color:#087B39;
 }
 
 #header > img
@@ -28,6 +71,12 @@ div
 	border-color: #a9a9a9;
 	border-style: solid;
 	border-width: 1px;
+}
+
+#barChart_box,#brusher_box
+{
+	width: 1200px;
+	height:400px;
 }
 
 #selectionBox
@@ -57,8 +106,8 @@ div
 
 .Africa
 {
-	fill: #FFD700;
-	color: #FFD700;
+	fill: #FFEF08;
+	color: #FFEF08;
 	stroke-width:1;
 	stroke:#ffffff;
 	fill-opacity:0.7;
@@ -66,8 +115,8 @@ div
 
 .Americas
 {
-	fill:#FF0000;
-	color: #FF0000;
+	fill:#DE1818;
+	color: #DE1818;
 	stroke-width:1;
 	stroke:#ffffff;
 	fill-opacity:0.7;
@@ -75,8 +124,8 @@ div
 
 .Oceania
 {
-	fill:#4169E1;
-	color: #4169E1;
+	fill:#00298C;
+	color: #00298C;
 	stroke-width:1;
 	stroke:#ffffff;
 	fill-opacity:0.7;
@@ -84,17 +133,104 @@ div
 
 .Europe
 {
-	fill:#008000;
-	color: #008000;
+	fill:#087B39;
+	color: #087B39;
 	stroke-width:1;
 	stroke:#ffffff;
 	fill-opacity:0.7;
+}
+
+#legend
+{
+	height:20px;
+	width:1000px;
+	margin-top: 20px;
+	margin-left:10%;
+	margin-bottom:20px;
+}
+
+#legend > h2
+{
+	float: left;
+	margin: 0 0 0 0;
+	position: absolute;
+}
+
+
+#legend > svg
+{
+	float: right;
+	width: 500px;
+}
+
+#legends > #asia
+{
+	display: inline-block;
+	height: 15px;
+	width:15px;
+	fill:#000000;
+	color: #000000;
+}
+
+#legends > #africa
+{
+	height: 15px;
+	width:15px;
+	fill:#FFD700;
+	color: #FFD700;
+}
+
+#legends > #americas
+{
+	height: 15px;
+	width:15px;
+	fill:#FF0000;
+	color: #FF0000;
+}
+
+
+#legends > #euro
+{
+	height: 15px;
+	width:15px;
+	fill:#008000;
+	color: #008000;
+}
+
+
+#legends > #oceania
+{
+	height: 15px;
+	width:15px;
+	fill:#4169E1;
+	color: #4169E1;
+}
+
+#legends > #host
+{
+	height: 15px;
+	width:30px;
+	fill:#008000;
+	color: #008000;
+}
+
+#legends > #candidate
+{
+	height: 15px;
+	width:18px;
+	fill:#008000;
+	color: #008000;
 }
 
 #summary
 {
 	visibility: hidden;
 	height: 100px;
+	width: 1100px;
+	padding-top:20px;
+	padding-left:20px;
+	text-align:center;
+	font-weight:bold;
 }
 
 .map-tooltip {
@@ -158,14 +294,6 @@ div
 
 .active {
 	fill: orange;
-}
-
-#summary
-{
-	padding-top:20px;
-	padding-left:20px;
-	text-align:center;
-	font-weight:bold;
 }
 
 .Asia_td
