@@ -295,8 +295,7 @@ function drawChart() {
 
     d3.select("#barChartSvg")
         .attr("height", height)
-        .attr("width", width)
-		.style("margin", "auto");
+        .attr("width", width);
 
     var xAxisScale = d3.scaleLinear()
         .domain([1892, 2024])

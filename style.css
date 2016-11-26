@@ -7,7 +7,7 @@ h2
 	text-shadow: 0 2px white, 0 3px #777;
 }
 
-#box, #barChart_box, #brusher_box, #summary
+#box, #chart, #summary
 {
 	margin:auto;
 }
@@ -73,10 +73,10 @@ div
 	border-width: 1px;
 }
 
-#barChart
+#chart
 {
 	width: 1200px;
-	height: 2000px;
+	height: 1000px;
 }
 
 #selectionBox
