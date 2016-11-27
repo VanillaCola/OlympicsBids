@@ -76,7 +76,7 @@ div
 #chart
 {
 	width: 1200px;
-	height: 1000px;
+	/*height: 500px;*/
 }
 
 #selectionBox
@@ -156,8 +156,29 @@ div
 	position: absolute;
 }
 
+#legendBar
+{
+	height:20px;
+	width:1000px;
+	margin-top: 20px;
+	margin-left:10%;
+	margin-bottom:20px;
+}
+
+#legendBar > h2
+{
+	float: left;
+	margin: 0 0 0 0;
+	position: absolute;
+}
 
 #legend > svg
+{
+	float: right;
+	width: 500px;
+}
+
+#legendBar > svg
 {
 	float: right;
 	width: 500px;
@@ -206,7 +227,7 @@ div
 	color: #4169E1;
 }
 
-#legends > #host
+#legendsForBar > #host
 {
 	height: 15px;
 	width:30px;
@@ -214,7 +235,7 @@ div
 	color: #008000;
 }
 
-#legends > #candidate
+#legendsForBar > #candidate
 {
 	height: 15px;
 	width:18px;
