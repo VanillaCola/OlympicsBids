@@ -234,17 +234,17 @@ div
 
 #legendsForBar > #host
 {
-	height: 15px;
+    height: 18px;
 	width:30px;
-	fill:#008000;
+    fill: purple;
 	color: #008000;
 }
 
 #legendsForBar > #candidate
 {
-	height: 15px;
+    height: 18px;
 	width:18px;
-	fill:#008000;
+    fill: purple;
 	color: #008000;
 }
 
@@ -351,4 +351,14 @@ div
 td
 {
 	width: 100px;
+}
+
+.infoCircle {
+    r: 6px;
+    fill: gray;
+}
+
+.infoLine {
+    stroke: gray;
+    stroke-width: 2px;
 }
