@@ -178,7 +178,9 @@ function updateMap(selection)
 		.append("rect")
 		.attr("id", function(d)
 		{
-			return "m"+d.City;
+			var id = d.City;
+			id = id.replace(/ /g,"_");
+			return "m"+id;
 		})
 		.attr("class", function(d)
 		{
@@ -247,7 +249,7 @@ function updateMap(selection)
                 }
             });
 			
-			rate = host/total;
+			rate = host/total * 100;
 			
 			rate = rate.toFixed(2);
 			
@@ -262,7 +264,7 @@ function updateMap(selection)
 					table += '<td class="' + continent + '">' + d.Year + '<br>' + '&#x2718' + '</td>';
 			});
 			
-			table += '<td class="' + continent + '">' + "Success Rate" + '<br>' + rate*100 + '%</td>';
+			table += '<td class="' + continent + '">' + "Success Rate" + '<br>' + rate + '%</td>';
 			
 			table += '</table>';
 			
@@ -358,7 +360,10 @@ function drawChart() {
 				.style("stroke", "#000000")
 				.style("stroke-width", "2");
 			
-				d3.select("#m"+d.city)
+				var id = d.city;
+				id = id.replace(/ /g,"_");
+				console.log("#m"+id);
+				d3.select("#m"+id)
 				.style("stroke", "#000000")
 				.style("stroke-width", "2");
 				tip.show(d);
@@ -369,7 +374,9 @@ function drawChart() {
 				.style("stroke", "#ffffff")
 				.style("stroke-width", "1");
 				
-				d3.select("#m"+d.city)
+				var id = d.city;
+				id = id.replace(/ /g,"_");
+				d3.select("#m"+id)
 				.style("stroke", "#ffffff")
 				.style("stroke-width", "1");
 				
