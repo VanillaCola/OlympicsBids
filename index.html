@@ -61,20 +61,26 @@
 	<div id="legendBar">
 
 	<h2> Number of candidates for each summer Olympic Game</h2>
-	<svg height="50">
-			<g id="legendsForBar">
-			<rect id="host" x= "300" y = "10"></rect>
-			<text x="340" y ="20" font-family="Verdana" font-size="10" stroke="#000000">Host</text>
-			<rect id="candidate" x ="400" y = "10"></rect>
-			<text x="420" y="20" font-family="Verdana" font-size="10" stroke="#000000">Candidate</text>
-			</g>
-	</svg>
+	<!--<svg height="50">-->
+			<!--<g id="legendsForBar">-->
+			<!--<rect id="host" x= "294" y = "20"></rect>-->
+			<!--<text x="340" y ="32" font-family="Verdana" font-size="10" stroke="#000000">Host</text>-->
+			<!--<rect id="candidate" x ="300" y = "0"></rect>-->
+			<!--<text x="340" y="12" font-family="Verdana" font-size="10" stroke="#000000">Candidate</text>-->
+			<!--</g>-->
+	<!--</svg>-->
 	</div>
 </div>
 
 <div id="chart">
 	<div id="barChart_box">
 		<svg id="barChartSvg">
+			<g id="legendsForBar">
+				<rect id="host" x= "50" y = "30"></rect>
+				<text x="96" y ="42" font-family="Verdana" font-size="10" stroke="#000000">Host</text>
+				<rect id="candidate" x ="56" y = "10"></rect>
+				<text x="96" y="22" font-family="Verdana" font-size="10" stroke="#000000">Candidate</text>
+			</g>
 			<g id="xAxis"></g>
 			<g id="yAxis"></g>
 			<g id="barChart"></g>

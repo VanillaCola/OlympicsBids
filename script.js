@@ -270,7 +270,6 @@ function updateMap(selection)
 			
 			summary.style("visibility", "visible")
 					.html(table);
-			console.log(table);
 		});
 		
 }
@@ -357,13 +356,14 @@ function drawChart() {
             .style("opacity", 1.0)
             .on("mouseover", function(d){
 				d3.select(this)
+                    .moveToFront()
 				.style("stroke", "#000000")
 				.style("stroke-width", "2");
 			
 				var id = d.city;
 				id = id.replace(/ /g,"_");
-				console.log("#m"+id);
 				d3.select("#m"+id)
+                    .moveToFront()
 				.style("stroke", "#000000")
 				.style("stroke-width", "2");
 				tip.show(d);
@@ -371,12 +371,14 @@ function drawChart() {
             .on("mouseout", function(d)
 			{
 				d3.select(this)
+                    // .moveToBack()
 				.style("stroke", "#ffffff")
 				.style("stroke-width", "1");
 				
 				var id = d.city;
 				id = id.replace(/ /g,"_");
 				d3.select("#m"+id)
+                    // .moveToBack()
 				.style("stroke", "#ffffff")
 				.style("stroke-width", "1");
 				
@@ -398,15 +400,32 @@ function drawChart() {
                 .on("mouseover", function(d)
 				{
 					d3.select(this)
-					.style("stroke", "#000000")
-					.style("stroke", "5");
+                        .moveToFront()
+                        .style("stroke", "#000000")
+                        .style("stroke-width", "2");
+
+                    var id = d.city;
+                    id = id.replace(/ /g,"_");
+                    d3.select("#m"+id)
+                        .moveToFront()
+                        .style("stroke", "#000000")
+                        .style("stroke-width", "2");
+
 					tip.show(d);
 				})
                 .on("mouseout", function(d)
 				{
 					d3.select(this)
-					.style("stroke", "#ffffff")
-					.style("stroke", "1");
+                        .style("stroke", "#ffffff")
+                        .style("stroke-width", "1");
+
+                    var id = d.city;
+                    id = id.replace(/ /g,"_");
+                    d3.select("#m"+id)
+                    // .moveToBack()
+                        .style("stroke", "#ffffff")
+                        .style("stroke-width", "1");
+
 					tip.hide(d)
 				});
         }
@@ -427,7 +446,6 @@ function drawChart() {
                     brushedYear.push(yearAxis[i].index);
                 }
             }
-            // console.log(brushedYear);
             d3.select("#brushDisplay")
                 .attr("width", width)
                 .attr("height", height / 5);
@@ -480,8 +498,8 @@ function drawChart() {
                     arr.forEach(function (c) {
                         if (c[1] != 0) {
                             if (c[0] == d[0]) {
-                                returnValue += "<span class='" + c[0] + "' style='border: 1px solid rgb(127, 127, 127);'>Cities from "
-                                    + c[0] + " : " + c[1] + "</span><span> <=</span></br>";
+                                returnValue += "<span class='" + c[0] + "' style='border: 0px solid gray; padding: 0.5px;'>Cities from "
+                                    + c[0] + " : " + c[1] + "</span><span> <<<</span></br>";
                             }
                             else {
                                 returnValue += "<span class='" + c[0] + "'>Cities from " + c[0] + " : " + c[1] + "</span></br>";
@@ -534,6 +552,74 @@ function drawChart() {
             d3.select("#brushFigure").selectAll("rect").remove();
         }
     }
+
+    // draw two text boxes to explain 1916/1940/1944 Olympic Games
+    var circleCoords = [{x:xAxisScale(1916), y:yAxisScale(8)},
+                        {x:xAxisScale(1940), y:yAxisScale(4)},
+                        {x:xAxisScale(1944), y:yAxisScale(10)}];
+
+    d3.select("#barChart")
+        .selectAll("circle")
+        .data(circleCoords)
+        .enter()
+        .append("circle")
+        .attr("cx", function(d){
+            return d.x + padding;
+        })
+        .attr("cy", function(d){
+            return d.y;
+        })
+        .classed("infoCircle", true);
+
+    var lineCoords = [{x:xAxisScale(1916), y1:yAxisScale(8), y2:yAxisScale(15)},
+        {x:xAxisScale(1940), y1:yAxisScale(4), y2:yAxisScale(15)},
+        {x:xAxisScale(1944), y1:yAxisScale(10), y2:yAxisScale(15)}];
+
+    d3.select("#barChart")
+        .selectAll("line")
+        .data(lineCoords)
+        .enter()
+        .append("line")
+        .attr("x1", function(d){
+            return d.x + padding;
+        })
+        .attr("x2", function(d){
+            return d.x + padding;
+        })
+        .attr("y1", function(d){
+            return d.y1;
+        })
+        .attr("y2", function(d){
+            return d.y2;
+        })
+        .classed("infoLine", true);
+
+    var texts =
+        [{x:xAxisScale(1916), y:yAxisScale(17), text:"Scheduled in Berlin, cancelled", dy:"0em", dx:"-65px"},
+        {x:xAxisScale(1916), y:yAxisScale(17), text:"due to the outbreak of WWI1", dy:"1.2em", dx:"-65px"},
+        {x:xAxisScale(1940), y:yAxisScale(17), text:"Scheduled in Tokyo (1940) and London (1944),", dy:"0em", dx:"-18px"},
+        {x:xAxisScale(1940), y:yAxisScale(17), text:"cancelled due to WWII", dy:"1.2em", dx:"-18px"}];
+
+    d3.select("#barChart")
+        .selectAll("text")
+        .data(texts)
+        .enter()
+        .append("text")
+        .attr("x", function(d){
+            return d.x;
+        })
+        .attr("y", function(d){
+            return d.y;
+        })
+        .attr("dx", function(d){
+            return d.dx;
+        })
+        .attr("dy", function(d){
+            return d.dy;
+        })
+        .text(function(d){
+            return d.text;
+        });
 }
 
 function drawChartCall() {
@@ -606,12 +692,25 @@ d3.json("data/world-50m.json", function(error, world)
             // mapping[d.City] = d.Continents;
         });
 
-        // console.log(mapping);
         mapData = csv;
         updateMap("all");
 
         drawChartCall();
     });
-	
-	
+
+    // https://github.com/wbkd/d3-extended
+    d3.selection.prototype.moveToFront = function() {
+        return this.each(function(){
+            this.parentNode.appendChild(this);
+        });
+    };
+    d3.selection.prototype.moveToBack = function() {
+        return this.each(function() {
+            var firstChild = this.parentNode.firstChild;
+            if (firstChild) {
+                this.parentNode.insertBefore(this, firstChild);
+            }
+        });
+    };
+
 });
