@@ -96,7 +96,7 @@ function selectionChange() {
         height = 350;
 
     if (selection == "Africa") {
-        centroid[0] = 500.0;
+        centroid[0] = 550.0;
         centroid[1] = 210.0;
         k = 1.8;
     }
@@ -106,13 +106,13 @@ function selectionChange() {
         k = 1.5;
     }
     else if (selection == "Asia") {
-        centroid[0] = 660.0;
+        centroid[0] = 700.0;
         centroid[1] = 170.0;
         k = 2;
     }
     else if (selection == "Europe") {
-        centroid[0] = 490.0;
-        centroid[1] = 90.0;
+        centroid[0] = 550.0;
+        centroid[1] = 110.0;
         k = 2;
     }
     else if (selection == "Oceania") {
@@ -352,6 +352,7 @@ function drawChart() {
             .attr("class", function(d) {
                 return d.continent;
             })
+            .style("opacity", 1.0)
             .on("mouseover", function(d){
 				d3.select(this)
 				.style("stroke", "#000000")
@@ -386,6 +387,7 @@ function drawChart() {
                 .attr("width", 30)
                 .attr("height", yAxisScale(19))
                 .classed(year.host.continent, true)
+                .style("opacity", 1.0)
                 .on("mouseover", function(d)
 				{
 					d3.select(this)
