@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Visualization - Final Project - Exploring the History Bids of Olympic Games </title>
+    <link rel="stylesheet" href="style.css"/>
+	<script type="text/javascript" src="bower_components/d3/d3.js"></script>
+	<script type="text/javascript" src="bower_components/d3-tip/index.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+</head>
+
+<body>
+<header id = "header">
+    <img src="picture/logo.png" alt="Summer Olympic Game Logo" id="logo"/>
+    <h1><span class="red">Exploring</span> <span class="black">the</span> <span class="green">History</span> <span class="blue">Bids</span> <span class="yellow">of</span> <span class="red">Olympic</span> <span class="black">Games</span></h1>
+    <div>Name: Jiyuan Li, Ren Miao; E-Mail: u0710273@utah.edu, rmiao@cs.utah.edu; UID: u0710273, u0748747</div>
+</header>
+
+<div id = "map-view" class="view">
+<div id="legend">
+<h2>World Map</h2>
+	<svg>
+	<g id="legends">
+			<rect id="asia" x= "0" y = "10"></rect>
+			<text x="20" y ="20" font-family="Verdana" font-size="10" stroke="#000000">Asia</text>
+			<rect id="americas" x ="70" y = "10"></rect>
+			<text x="90" y="20" font-family="Verdana" font-size="10" stroke="#FF0000">Americas</text>
+			<rect id="euro" x= "140" y = "10"></rect>
+			<text x="160" y="20" font-family="Verdana" font-size="10" stroke="#008000">Europe</text>
+			<rect id="africa" x="210" y="10"></rect>
+			<text x="230" y="20" font-family="Verdana" font-size="10" stroke="#FFD700">Africa</text>
+			<rect id="oceania" x="280" y="10"></rect>
+			<text x="300" y="20" font-family="Verdana" font-size="10" stroke="#4169E1">Oceania</text>
+			</g>
+	</svg>
+	</div>
+	<div id="box">
+		<div id="selectionBox">
+		<h5>Choose a Continent</h5>
+			<select id="selector">
+				<option selected value="All">(All)</option>
+				<option value="Africa">Africa</option>
+				<option value="Americas">Americas</option>
+				<option value="Asia">Asia</option>
+				<option value="Europe">Europe</option>
+				<option value="Oceania">Oceania</option>
+		</select>
+		</div>
+		<svg id="map-svg">
+			<g id="map"></g>
+		</svg>
+	</div>
+
+</div>
+
+<div id="summary"></div>
+
+<div>
+	<div id="legendBar">
+
+	<h2> Number of candidates for each summer Olympic Game</h2>
+<<<<<<< HEAD
+	<svg height="50">
+			<g id="legendsForBar">
+=======
+	<svg id="l2">
+			<g id="legends">
+>>>>>>> master
+			<rect id="host" x= "300" y = "10"></rect>
+			<text x="340" y ="20" font-family="Verdana" font-size="10" stroke="#000000">Host</text>
+			<rect id="candidate" x ="400" y = "10"></rect>
+			<text x="420" y="20" font-family="Verdana" font-size="10" stroke="#000000">Candidate</text>
+			</g>
+	</svg>
+	</div>
+</div>
+
+<div id="chart">
+	<div id="barChart_box">
+		<svg id="barChartSvg">
+			<g id="xAxis"></g>
+			<g id="yAxis"></g>
+			<g id="barChart"></g>
+		</svg>
+	</div>
+	
+	<div id="brusher_box">
+		<svg id="brushDisplay">
+			<g id="brushText"></g>
+			<g id="brushIcon"></g>
+			<g id="brushFigure"></g>
+		</svg>
+	</div>
+</div>
+
+<script type="application/javascript" src="script.js"></script>
+</body>
+</html>
