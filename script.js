@@ -179,6 +179,9 @@ function updateMap(selection)
 		.attr("id", function(d)
 		{
 			var id = d.City;
+			if (id == "St. Louis") {
+			    id = "St Louis";
+            }
 			id = id.replace(/ /g,"_");
 			return "m"+id;
 		})
@@ -283,7 +286,7 @@ function drawChart() {
 
     var tip = d3.tip()
         .attr("class", "chart-tooltip")
-        .offset([25,75])
+        .offset([40,80])
         .html(function(d) {
             var country = "";
             candidateData.forEach(function (city) {
@@ -291,7 +294,8 @@ function drawChart() {
                     country = city.Country;
                 }
             })
-            return "<span>" + d.city + "</span></br><span>" + country + "</span>";
+            // return "<span>" + d.city + "</span></br><span>" + country + "</span>";
+            return d.city + "</br>" + country;
         });
 
     d3.select("#barChartSvg")
@@ -361,7 +365,11 @@ function drawChart() {
 				.style("stroke-width", "2");
 			
 				var id = d.city;
+                if (id == "St. Louis") {
+                    id = "St Louis"
+                }
 				id = id.replace(/ /g,"_");
+                // console.log(id);
 				d3.select("#m"+id)
                     .moveToFront()
 				.style("stroke", "#000000")
@@ -376,6 +384,9 @@ function drawChart() {
 				.style("stroke-width", "1");
 				
 				var id = d.city;
+                if (id == "St. Louis") {
+                    id = "St Louis";
+                }
 				id = id.replace(/ /g,"_");
 				d3.select("#m"+id)
                     // .moveToBack()
@@ -405,7 +416,12 @@ function drawChart() {
                         .style("stroke-width", "2");
 
                     var id = d.city;
+                    if (id == "St. Louis") {
+                        id = "St Louis";
+                    }
+                    // console.log(id);
                     id = id.replace(/ /g,"_");
+                    // console.log(id);
                     d3.select("#m"+id)
                         .moveToFront()
                         .style("stroke", "#000000")
@@ -420,6 +436,9 @@ function drawChart() {
                         .style("stroke-width", "1");
 
                     var id = d.city;
+                    if (id == "St. Louis") {
+                        id = "St Louis";
+                    }
                     id = id.replace(/ /g,"_");
                     d3.select("#m"+id)
                     // .moveToBack()
@@ -468,25 +487,28 @@ function drawChart() {
                     return returnText.substring(0, returnText.length - 1);
                 });
 
-            var continentArr = {Asia: 0, Africa: 0, Americas: 0, Oceania: 0, Europe: 0};
+            var continentArr = {Asia: {num:0, city:[]}, Africa: {num:0, city:[]},
+                Americas: {num:0, city:[]}, Oceania: {num:0, city:[]}, Europe: {num:0, city:[]}};
             for (var year = 0; year < brushedYear.length; year++) {
                 var singleYear = yearData[brushedYear[year]];
                 if (singleYear.host) {
-                    continentArr[singleYear.host.continent] = parseInt(continentArr[singleYear.host.continent]) + 1;
+                    continentArr[singleYear.host.continent].num = parseInt(continentArr[singleYear.host.continent].num) + 1;
+                    continentArr[singleYear.host.continent].city.push(singleYear.host.city);
                 }
                 singleYear.candidate.forEach(function (d) {
-                    continentArr[d.continent] = parseInt(continentArr[d.continent]) + 1;
+                    continentArr[d.continent].num = parseInt(continentArr[d.continent].num) + 1;
+                    continentArr[d.continent].city.push(d.city);
                 });
             }
 
             var arr = [];
             for (var c in continentArr) {
-                arr.push([c, parseInt(continentArr[c])]);
+                arr.push([c, parseInt(continentArr[c].num)]);
             }
 
             var sum = 0;
             for (var c in continentArr) {
-                sum += parseInt(continentArr[c]);
+                sum += parseInt(continentArr[c].num);
             }
             var unit = width / sum;
 
@@ -512,38 +534,70 @@ function drawChart() {
 
             d3.select("#brushFigure").call(tip);
 
+            var arr2 = [];
+            for (var c in continentArr) {
+                arr2.push([c, continentArr[c]]);
+            }
+
             var dataBinding = d3.select("#brushFigure")
                 .selectAll("rect")
-                .data(arr)
+                .data(arr2)
                 .enter()
                 .append("rect");
 
             var dataBindingCombined = d3.select("#brushFigure")
                 .selectAll("rect")
-                .data(arr)
+                .data(arr2)
                 .merge(dataBinding);
 
             dataBindingCombined
                 .attr("y", 40)
-                .attr("class", function (d, i) {
-                    return arr[i][0];
+                .attr("class", function (d) {
+                    return d[0];
                 })
                 .attr("height", 40)
                 // .attr("width", 0)
                 .style("fill-opacity", 0.1)
-                .on("mouseover", tip.show)
-                .on("mouseout", tip.hide)
+                .on("mouseover", function(d) {
+                    tip.show(d);
+
+                    d[1].city.forEach(function (c) {
+                        var id = c;
+                        if (id == "St. Louis") {
+                            id = "St Louis";
+                        }
+                        id = id.replace(/ /g, "_");
+                        d3.select("#m" + id)
+                            .moveToFront()
+                            .style("stroke", "#000000")
+                            .style("stroke-width", "2");
+                    });
+                })
+                .on("mouseout", function(d) {
+                    tip.hide();
+
+                    d[1].city.forEach(function (c) {
+                        var id = c;
+                        if (id == "St. Louis") {
+                            id = "St Louis";
+                        }
+                        id = id.replace(/ /g, "_");
+                        d3.select("#m" + id)
+                            .style("stroke", "#ffffff")
+                            .style("stroke-width", "1");
+                    });
+                })
                 .transition()
                 .duration(500)
                 .attr("x", function (d, i) {
                     var temp = 0;
                     for (var index = 0; index < i; index++) {
-                        temp += arr[index][1];
+                        temp += arr2[index][1].num;
                     }
                     return temp * unit + padding;
                 })
                 .attr("width", function (d, i) {
-                    return unit * arr[i][1];
+                    return unit * arr2[i][1].num;
                 })
                 .style("fill-opacity", 0.8);
         }
