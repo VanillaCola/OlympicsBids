@@ -2,8 +2,8 @@ var mapData;
 var candidateData;
 var yearData;
 var summaryData;
-// var mapping;
 
+// A function to draw the world map using d3 projection
 function drawMap(world)
 {
     var width = 1100,
@@ -40,6 +40,7 @@ function drawMap(world)
         })
         .on("click", clicked);
 
+    // need to adjust the centroids for USA, Russia and Canada to show their candidate cities
     var usa = [200.2752559979278, 94.78255166210089];
     var canada = [246.27472463014664, 25.250675373398686];
     var russia = [654.8952792374205, 39.984858220915804];
@@ -82,11 +83,11 @@ function drawMap(world)
         map.transition()
             .duration(1000)
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
-        // .style("stroke-width", 1.5 / k + "px");
     }
 	
 }
 
+// A function for handling the selection in the continent selector. The centroids for the continents are manually set.
 function selectionChange() {
     var map = d3.select("#map");
     var selection = document.getElementById("selector").value;
@@ -129,23 +130,15 @@ function selectionChange() {
     x = centroid[0];
     y = centroid[1];
 
-    // centered = d;
-
-    // x = width / 2;
-    // y = height / 2;
-    // k = 1;
-    // centered = null;
-
-
     map.selectAll("path")
         .classed("active", false);
 
     map.transition()
         .duration(1000)
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
-    // .style("stroke-width", 1.5 / k + "px");
 }
 
+// a function to clear up the world map drawings.
 function clearMap()
 {
 	var map = d3.select("#map");
@@ -153,6 +146,7 @@ function clearMap()
 	map.selectAll("rect").remove();
 }
 
+// a function to update the world map
 function updateMap(selection)
 {
 	clearMap();
@@ -169,7 +163,6 @@ function updateMap(selection)
 
 	map.call(tip);
 
-	// var projection = d3.geoEquirectangular().scale(160).translate([450, 200]);
     var projection = d3.geoMercator().scale(120).translate([450, 220]);
 	
 	map.selectAll("rect")
@@ -273,10 +266,10 @@ function updateMap(selection)
 			
 			summary.style("visibility", "visible")
 					.html(table);
-		});
-		
+		});	
 }
 
+// a fucntion to handle drawing the stach bar chart.
 function drawChart() {
     var height = 400;
     var width = 1200;
@@ -294,7 +287,6 @@ function drawChart() {
                     country = city.Country;
                 }
             })
-            // return "<span>" + d.city + "</span></br><span>" + country + "</span>";
             return d.city + "</br>" + country;
         });
 
@@ -369,7 +361,6 @@ function drawChart() {
                     id = "St Louis"
                 }
 				id = id.replace(/ /g,"_");
-                // console.log(id);
 				d3.select("#m"+id)
                     .moveToFront()
 				.style("stroke", "#000000")
@@ -419,9 +410,9 @@ function drawChart() {
                     if (id == "St. Louis") {
                         id = "St Louis";
                     }
-                    // console.log(id);
+                   
                     id = id.replace(/ /g,"_");
-                    // console.log(id);
+                    
                     d3.select("#m"+id)
                         .moveToFront()
                         .style("stroke", "#000000")
@@ -676,6 +667,7 @@ function drawChart() {
         });
 }
 
+// a function to handle the call for drawing the stach bar chart
 function drawChartCall() {
     d3.csv("data/Candidate_Cities_data.csv", function (error, csv) {
         if (error) throw error;
