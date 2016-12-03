@@ -9,4 +9,5 @@ Libraries: d3, d3-tip <br/>
 Other: logo.png <br/>
 
 Repository URL: https://github.com/VanillaCola/OlympicsBids <br/>
-Project URL: https://vanillacola.github.io/OlympicsBids/
+Project URL: https://vanillacola.github.io/OlympicsBids/ <br/>
+Screencast Video URL: https://www.youtube.com/watch?v=JsG-_b81AjU 
